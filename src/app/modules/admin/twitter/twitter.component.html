@@ -1,0 +1,8 @@
+<!-- TWITTER -->
+<div class="loader" *ngIf="loading">Loading...</div>
+<ngx-twitter-timeline #timeline
+    [source]="{ sourceType: 'profile', screenName: screenName }"
+    [options]="{ height: '400' }"
+    (onLoad)="onLoad($event)"
+>
+</ngx-twitter-timeline>

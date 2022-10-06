@@ -1,0 +1,8 @@
+
+<div class="formulario md:flex-row flex flex-col items-center ">
+            <mat-form-field class="w-[60%] mt-4 ml-6" appearance="fill" appearance="fill">
+                <input matInput placeHolder="Name" required name="name" #userName/>
+            </mat-form-field>
+            <button  mat-button color="warn" (click)="changeUser()">Buscar</button>
+</div>
+<app-twitter *ngIf="rendered" [screenName]=screenName></app-twitter>

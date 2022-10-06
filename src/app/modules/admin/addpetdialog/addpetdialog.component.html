@@ -1,0 +1,23 @@
+<h2 mat-dialog-title>Nueva mascota</h2>
+<mat-dialog-content class="mat-typography">
+    <form>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Nombre de la mascota</mat-label>
+            <input matInput placeHolder="Name" required name="name" #name/>
+
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Tipo</mat-label>
+             <mat-select matNativeControl required name="tipos" id="tipos" [(ngModel)]="tipo">
+            <mat-option value="1">Gato</mat-option>
+            <mat-option value="2">Perro</mat-option>
+            <mat-option value="3">Lagarto</mat-option>
+            <mat-option value="4">Serpiente</mat-option>
+            <mat-option value="5">Pájaro</mat-option>
+            <mat-option value="6">Hamster</mat-option>
+             </mat-select>
+            </mat-form-field>
+    </form>
+    <button mat-button color="primary" (click)="addPet()">Aceptar</button>
+</mat-dialog-content>

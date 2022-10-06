@@ -1,0 +1,23 @@
+
+<app-addpetdialog *ngIf="displayDialogMode"></app-addpetdialog>
+<mat-expansion-panel hideToggle *ngFor="let item of owners">
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+        <mat-icon>perm_identity</mat-icon>
+        {{item.firstName}} {{item.lastName}}
+        <!-- <input type="file" class="file-upload" onchange="console.log(event.target.files)"> -->
+    </mat-panel-title>
+    <mat-panel-description>
+        Pets: {{item.pets.length || '0'}}
+        <button mat-mini-fab color="warn" style="float: right;" (click)="openDialog(item.id)"><mat-icon>add</mat-icon></button>
+    </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div *ngFor="let pet of item.pets" class="pet-list">
+        <div><mat-icon>pets</mat-icon> {{pet.name}} | {{pet.type.name | titlecase}}</div>
+        <div>
+        <button cdkFocusInitial style="float: right;" mat-mini-fab color="warn" (click)="borrarMascota(pet.id)">
+            <mat-icon>delete</mat-icon>
+        </button>
+    </div>
+    </div>
+</mat-expansion-panel>
